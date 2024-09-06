@@ -1,0 +1,103 @@
+/* Reset básico, utilizado para limpar o CSS padrao do Navegador. */
+/* Diferença entre margin e padding:
+O padding é o espaço interno de um elemento, entre o conteúdo do elemento e as bordas. E como o espaço preenchido dentro da caixa, entre o objeto (conteúdo) e as paredes internas da caixa (bordas). Esse espaço cria uma "almofada" interna, afastando o conteúdo das bordas da caixa.
+
+A margin é como o espaço externo ao redor da caixa, criando distância entre a caixa e as outras caixas ou objetos ao redor. Esse espaço não faz parte da caixa, mas sim da área ao redor dela.
+*/
+* { /* O * significa tudo. */
+  margin: 0; /* Remove a margem padrão predefinda pelo Navegador para todos os elementos. */
+  padding: 0; /* Remove o padding padrão predefinda pelo Navegador para todos os elementos. */
+  box-sizing: border-box; /* Box-sizing: border-box; => Ocupa o tamanho do elemento. Isso permite que o padding e o border sejam considerados na largura e altura do elemento.*/
+  
+}
+
+/* Estilos gerais */
+/* O que é: A propriedade display no CSS define como um elemento HTML será mostrado na página. */
+/*
+Principais valores:
+block: O elemento ocupa toda a largura disponível e começa em uma nova linha. Exemplos: <div>, <p>.
+inline: O elemento ocupa apenas o espaço necessário e não quebra a linha. Exemplos: <span>, <a>.
+inline-block: Combina comportamentos de block e inline. O elemento não quebra a linha, mas você pode definir largura e altura.
+flex: Transformar um container em um layout flexível (Flexbox).
+*/
+body { /* Corpo */
+  font-family: 'Arial', sans-serif; /* Fonte da aplicação. */
+  background-color: #f0f0f0; /* Cor de fundo. */
+  color: #333; /* Cor do texto. */
+  
+  display: flex; /* Flexbox, permite que os elementos sejam colocados em linhas e colunas, facilitando o alinhamento dos elementos e sua responsividade. */
+  flex-direction: column; /* Direção do eixo principal, no caso, vertical esquema de colunas. */
+  justify-content: center; /* Alinha os itens ao longo do eixo principal, que neste caso é o eixo vertical. */
+  align-items: center; /* Alinha os itens ao longo do eixo secundário, que neste caso é o eixo horizontal. */
+
+  height: 100vh; /* Altura, em vh (porcentagem da altura da tela) neste caso 100% da aultura da tela. */
+}
+
+/* 
+A propriedade border-radius é usada para arredondar os cantos de um elemento.
+Você pode aplicar valores em pixels (px), porcentagem (%), ou outras unidades para definir o quanto os cantos serão arredondados.
+Você pode arredondar cada canto separadamente, ou todos juntos.
+border-radius: 10px 20px 30px 40px; o primeiro valor é cima o segundo para a direita e o terceiro para baixo e o quarto para a esquerda.
+
+A propriedade box-shadow adiciona uma sombra ao redor de um elemento.
+box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5); cria uma sombra deslocada 2px para a direita e 4px para baixo, com 6px de desfoque.
+*/
+.form-container { /* Classe vinculada a tag main que contém o formulario. */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Arredondamento da borda. */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra. */
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 { /* Titulo. */
+  text-align: center; /* Alinhamento do texto. */
+  margin-bottom: 20px; /* Adiciona a margin só para baixo. */
+  font-size: 1.8rem; /* Aumenta o tamanho da fonte em unidade rem que é relativa ao tamanho da fonte do Navegador. 1rem = 16px por padrão */
+  color: #333;
+}
+
+.form-group { /* Divisão, utilizado para agrupar elementos. */
+  margin-bottom: 15px;
+}
+
+label { /* Etiqueta. */
+  display: block; /* Ocupa toda a largura disponível em uma nova linha. */
+  font-weight: bold; /* Negrito. */
+  margin-bottom: 5px;
+}
+
+.form-input { /* Input. */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.submit-button { /* Botão de envio. */
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer; /* Muda o cursor do mouse para uma maos ao passar sobre o botão. */
+  transition: background-color 0.3s ease; /* Transição do botão faz mudar a cor de fundo o primeiro valor é o tempo e o segundo valor é o tipo da transição. */
+}
+
+.submit-button:hover { /* Ao passar o mouse sobre o botão. */
+  background-color: #218838; /* Muda a cor de fundo. */
+}
+
+.error-message { /* Span (Um tipo de elemento de texto com pouca relevância). Adiciona estilo as menmsagens de erro.*/
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-input.error { /* Input de erro, muda a cor da borda do input para vermelho. */
+  border-color: red; /* Muda a cor da borda. */
+}

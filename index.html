@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Definir idioma do site -->
+<head> <!-- Cabeça do site -->
+  <meta charset="UTF-8"> <!-- Codificacao do site -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tamanho da tela -->
+  <title>Formulário de Contato</title> <!-- Titulo do site -->
+  <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+</head>
+<body> <!-- Corpo -->
+  <header > <!-- Cabecalho do Corpo -->
+    <h1>Entre em Contato</h1> <!-- Titulo do site -->
+  </header>
+
+  <main class="form-container"> <!-- Conteudo principal do site -->
+    <form id="contact-form"> <!-- Formulario -->
+      <div class="form-group"> <!-- Divisão, utilizado para agrupar elementos -->
+        <label for="name">Nome:</label> <!-- Etiqueta para o nome do input, for = identificador e precisa ser igual ao id -->
+        <input type="text" id="name" class="form-input" placeholder="Seu nome"> <!-- Input para o nome, type = tipo do input, id = identificador, class = classe, utilizada para definir estilos -->
+        <span id="name-error" class="error-message"></span> <!-- Span (Um tipo de elemento de texto com pouca relevância) para mensagem de erro, id = identificador, class = classe, utilizada para definir estilos -->
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" class="form-input" placeholder="Seu e-mail">
+        <span id="email-error" class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensagem:</label>
+        <textarea id="message" class="form-input" rows="5" placeholder="Sua mensagem"></textarea>
+        <span id="message-error" class="error-message"></span>
+      </div>
+      
+      <button type="submit" class="submit-button">Enviar</button> <!-- Botão para enviar o formulario, type submit = envia o formulario. -->
+    </form>
+  </main>
+
+  <script src="script.js"></script> <!-- Link para o Javascript -->
+</body>
+</html>
